@@ -1,0 +1,40 @@
+# Header
+menu:
+  Home: /
+  Archives: /archives
+  About Me: /about/me
+rss: /atom.xml
+banner: /images/banner.png
+subtitle: stories of diversity in tech
+
+# Content
+excerpt_link: Read More
+fancybox: true
+recent_posts_limits: 5
+# Footer
+copyright: |-
+  <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a></br>
+  All website licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></br>
+
+# Sidebar
+sidebar: right
+widgets:
+- category
+- tag
+- tagcloud
+- archive
+- recent_posts
+
+# Miscellaneous
+google_analytics:
+favicon: /images/favicon.png
+twitter: https://twitter.com/puja108
+
+# Header links
+# Each name must correspond to the icon name of Fork Awesome
+# https://forkaweso.me/Fork-Awesome/icons/
+links:
+  github: https://github.com/puja108
+  twitter: https://twitter.com/puja108
+  linkedin: https://www.linkedin.com/in/pujaabbassi/
+#  telegram: https://t.me/your_telegram_account
