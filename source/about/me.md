@@ -5,7 +5,7 @@ date: 2023-11-30 12:18:30
 
 
 <img src="/images/KubeCon_CloudNativeCon_portraits_161.jpg" width=240 align=right style="margin: 0px 5px">
-Hi, I'm Puja. I'm Vice President of Product Relations at Giant Swarm, where we build a managed Cloud Native Developer Platform based on Kubernetes. I'm also a CNCF Ambassador and regularly speak at technology and startup events around the globe.
+Hi, I'm Puja. I'm Vice President of Product at Giant Swarm, where we build a managed Cloud Native Developer Platform based on Kubernetes. I'm also a CNCF Ambassador and regularly speak at technology and startup events around the globe.
 In the past I have worked in various startups and software projects; first as a developer later in product management roles. Next to that I used to be an external expert advisor to the European Commission and a Network Science researcher working on projects in the fields of IT security, technology startups, and venture capital. In my spare time I coach technology startups at international accelerator programs and dabble in various topics around technology innovation.
 
 ## Research
