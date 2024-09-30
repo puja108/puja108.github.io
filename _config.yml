@@ -96,7 +96,40 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: Claudia
+
+# user for Claudia theme
+user:
+  name: Puja Abbassi
+  avatar: /images/head.jpg
+  location: Cologne, Germany
+  description: stories of diversity in tech
+  footnotes:
+
+# SNS for Claudia theme
+social:
+  twitter: puja108
+  facebook: puja.abbassi
+  linkedin: pujaabbassi
+  instagram: puja108
+  github: puja108
+
+# Page icon for Claudia theme
+favicon: images/favicon.png
+
+# main menu navigation
+menu:
+  Home: /
+  About: /about/me
+  Archives: /archives
+
+widgets:
+  - tag
+  - archive
+  - category
+  - recent_posts
+
+appearance: auto
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment

@@ -1,6 +1,7 @@
 ---
 title: About me
 date: 2023-11-30 12:18:30
+layout: about
 ---
 
 
