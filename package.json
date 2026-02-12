@@ -12,7 +12,7 @@
     "version": "8.1.1"
   },
   "dependencies": {
-    "brace-expansion": "^4.0.1",
+    "brace-expansion": "^5.0.2",
     "hexo": "^8.1.1",
     "hexo-generator-archive": "^2.0.0",
     "hexo-generator-category": "^2.0.0",
