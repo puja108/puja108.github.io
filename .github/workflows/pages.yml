@@ -35,7 +35,7 @@ jobs:
           echo "posts: $expected in source, $actual generated"
           [ "$expected" -eq "$actual" ] || { echo "::error::expected $expected post pages, got $actual"; exit 1; }
 
-          if grep -rlE '<%|\{\{' public --include='*.html'; then
+          if grep -rnoE '.{0,40}(<%|\{\{).{0,40}' public --include='*.html'; then
             echo "::error::unrendered template tags in generated HTML"
             exit 1
           fi
