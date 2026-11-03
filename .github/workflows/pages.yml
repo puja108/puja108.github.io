@@ -5,6 +5,11 @@ on:
     branches:
       - main # default branch
   pull_request:
+  # Auto-merged Dependabot PRs don't trigger a deploy, so redeploy weekly.
+  # Tuesday, after Dependabot's Monday run.
+  schedule:
+    - cron: "0 6 * * 2"
+  workflow_dispatch:
 
 jobs:
   build:
@@ -49,12 +54,12 @@ jobs:
             'public/**/*.html'
           fail: true
       - name: Upload Pages artifact
-        if: github.event_name == 'push'
+        if: github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
   deploy:
-    if: github.event_name == 'push'
+    if: github.event_name != 'pull_request'
     needs: build
     permissions:
       pages: write
