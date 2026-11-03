@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main # default branch
+  pull_request:
 
 jobs:
   build:
@@ -24,11 +25,36 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
+      - name: Check generated site
+        run: |
+          set -euo pipefail
+          test -s public/index.html || { echo "::error::public/index.html is missing or empty"; exit 1; }
+
+          expected=$(find source/_posts -name '*.md' | wc -l)
+          actual=$(find public -path 'public/[0-9][0-9][0-9][0-9]/*' -name index.html | wc -l)
+          echo "posts: $expected in source, $actual generated"
+          [ "$expected" -eq "$actual" ] || { echo "::error::expected $expected post pages, got $actual"; exit 1; }
+
+          if grep -rnoE '.{0,40}(<%|\{%).{0,40}' public --include='*.html'; then
+            echo "::error::unrendered template tags in generated HTML"
+            exit 1
+          fi
+      - name: Check internal links
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >-
+            --offline --no-progress
+            --root-dir ${{ github.workspace }}/public
+            --fallback-extensions html
+            'public/**/*.html'
+          fail: true
       - name: Upload Pages artifact
+        if: github.event_name == 'push'
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
   deploy:
+    if: github.event_name == 'push'
     needs: build
     permissions:
       pages: write
